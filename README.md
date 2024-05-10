@@ -33,7 +33,7 @@ export default {
 
 
 
-
+Updating vercel
 ##
 ```sh
 npx vercel ./dist --prod
