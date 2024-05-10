@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  * {
+    @apply m-0 p-0 outline-0 box-border;
+  }
+  body {
+    @apply bg-[#000000];
+  }
+  body, input, button {
+    font-family: 'Roboto';
+  }
+  #root {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  a {
+    @apply text-[#FFFFFF];
+  }
+}
+
+
+/*
+Cores da v2
+
+Principal: #2C3E50 (cinza azulado escuro)
+Destaque: #8E44AD (roxo)
+Acento: #9B59B6 (roxo mais claro)
+Texto: #FFFFFF (branco)
+Fundo: #34495E (cinza azulado)
+Secundário: #E5E7E9 (cinza claro)
+*/
