@@ -7,8 +7,8 @@ import "./index.css";
 import Header from "./pages/Header/index.tsx";
 import Footer from "./pages/Footer/index.tsx";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
-// import { Outlet } from "react-router-dom";
-import About from "./pages/About/index.tsx";
+// import About from "./pages/About/index.tsx";
+import Login from "./pages/Login/index.tsx";
 
 const Layout = () => {
   return (
@@ -30,8 +30,8 @@ const router = createBrowserRouter([
         element: <App />,
       },
       {
-        path: "/about",
-        element: <About />,
+        path: "/login",
+        element: <Login />,
       },
       // {
       //   path: "/",

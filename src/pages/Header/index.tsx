@@ -36,8 +36,7 @@ const Header: React.FC = () => {
               </p>
             </Link>
           ))}
-
-          <Button className="w-28 h-10 uppercase" title={"Cadastro"} />
+          <Button className="w-28 h-10 uppercase" title="Cadastro" route={"/login"}/>
         </div>
       </div>
     </header>

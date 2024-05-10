@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import Container from "../Container";
 import { Typewriter } from "react-simple-typewriter";
 import Button from "../../components/ui/Button";
