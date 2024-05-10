@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
             Simplifique sua prática jurídica, economize tempo e
             forneça um serviço excepcional aos seus clientes com nossas ferramentas avançadas.
           </p>
-          <Button className="w-40 h-14 border border-gray-500" title="Experimente Grátis" />
+          <Button className="w-40 h-14 border border-gray-500" title="Experimente Grátis" route={"/login"}/>
         </div>
         </div>
       </Container>
