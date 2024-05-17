@@ -13,9 +13,9 @@ const Hero: React.FC = () => {
 
   return (
     <div className="w-full">
-      <Container className="py-20">
+      <Container>
         <div className="bg-hero-pattern2 bg-cover bg-no-repeat">
-        <div className="w-1/2 flex flex-col gap-y-5   ">
+        <div className="w-1/3 flex flex-col gap-y-5">
           <p className="text-base uppercase">
             Seu assistente juridico
           </p>

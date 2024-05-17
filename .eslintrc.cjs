@@ -23,6 +23,12 @@ module.exports = {
     "import/no-unresolved": "off",
     // "react/jsx-filename-extension": [1, { extensions: [".tsx"] }],
     "import/prefer-default-export": "off",
-    'quotes': ['error', 'single']
+    quotes: ["error", "single"],
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        allowExpressions: true,
+      },
+    ],
   },
 };

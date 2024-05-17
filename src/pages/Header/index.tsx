@@ -17,8 +17,9 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="w-full h-20 bg-[#16181C]/90 backdrop-blur-2xl  sticky top-0 z-50  border-cyan-800 rounded-lg">
-      <div className="h-full max-w-screen-xl mx-auto flex items-center justify-between bg-[#101010] rounded-lg p-10">
+    <header className="w-full h-20 bg-[#16181C]/90 backdrop-blur-2xl  sticky top-0 z-50 rounded-lg">
+      {/* <div className="h-full max-w-screen-xl mx-auto flex items-center justify-between rounded-lg p-10"> */}
+      <div className="h-full flex items-center justify-between rounded-lg p-10">
         <div>
           <Link to={"/"}>
             <img src={logo} alt="logo" className="w-16" />
