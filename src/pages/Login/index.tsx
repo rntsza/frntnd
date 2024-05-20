@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import SocialIcon from "../../components/ui/SocialIcon";
 // import { Link } from "react-router-dom";
 import api from "../../services/api";
-// import { toastService } from "../../services/toastService";
+import { toastService } from "../../services/toastService";
 
 const Login: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -10,10 +10,9 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // const [registerEmail, setRegisterEmail] = useState("");
-  // const [registerPassword, setRegisterPassword] = useState("");
-  // const [registerName, setRegisterName] = useState("");
-  // const [registerAvatar, setRegisterAvatar] = useState("");
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  const [registerName, setRegisterName] = useState("");
 
   const handleLogin = async () => {
     try {
@@ -24,10 +23,6 @@ const Login: React.FC = () => {
       });
       // const data = response;
       console.log("retorno api", response);
-      // if(!data) {
-      //   throw new Error("teste error");
-
-      // }
     } catch (error) {
       console.error("Error:");
       // toastService.error();
@@ -36,17 +31,16 @@ const Login: React.FC = () => {
 
   const handleSignUp = async () => {
     try {
-      console.log(email, password);
-      // const response = await fetch("http://localhost:3000/signup", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify({ email, password }),
-      // });
-      // const data = await response.json();
-    } catch (error) {
-      console.error("Error:", error);
+      const response = await api.post("/advogados", {
+        name: registerName,
+        email: registerEmail,
+        password: registerPassword,
+      });
+      console.log("Usuário criado: ", response);
+      toastService.success(`Bem-vindo ${registerName} 🥳`);
+      // Direcionar para a tela de serviços
+    } catch (error: any) {
+      toastService.error(`${error.response.data.error}`);
     }
   };
 
@@ -105,20 +99,22 @@ const Login: React.FC = () => {
             type="string"
             className="rounded-2xl px-2 py-1 w-4/5 md:w-full border-[1px] border-green-400 m-1 focus:shadow-md focus:border-pink-400 focus:outline-none focus:ring-0"
             placeholder="Nome"
+            defaultValue={registerName}
+            onBlur={(e) => setRegisterName(e.currentTarget.value)}
           ></input>
           <input
             type="email"
             className="rounded-2xl px-2 py-1 w-4/5 md:w-full border-[1px] border-green-400 m-1 focus:shadow-md focus:border-pink-400 focus:outline-none focus:ring-0"
             placeholder="Email"
-            // value={email}
-            // onSubmit={(e) => setEmail(email)}
+            defaultValue={registerEmail}
+            onBlur={(e) => setRegisterEmail(e.currentTarget.value)}
           ></input>
           <input
             type="password"
             className="rounded-2xl px-2 py-1 w-4/5 md:w-full border-[1px] border-green-400 m-1 focus:shadow-md focus:border-pink-400 focus:outline-none focus:ring-0"
             placeholder="Senha"
-            // value={password}
-            // onChange={(e) => setPassword(e.target.value)}
+            defaultValue={registerPassword}
+            onBlur={(e) => setRegisterPassword(e.currentTarget.value)}
           ></input>
           <button
             onClick={handleSignUp}
