@@ -23,6 +23,8 @@ import PlansPage from './pages/PlansPage/index.tsx';
 import PaymentPage from './pages/PaymentPage/index.tsx';
 // import About from "./pages/About/index.tsx";
 // import Profile from "./pages/Profile/index.tsx";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 // const isLogin = false;
 
@@ -33,7 +35,8 @@ const Layout = () => {
   // }
   return (
     <>
-    <ToastContainer></ToastContainer>
+    <ToastContainer/>
+    <SpeedInsights/>
     <div>
       <Header />
       <Outlet />
