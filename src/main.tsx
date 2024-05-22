@@ -18,13 +18,12 @@ import {
 // import Dashboard from "./pages/Dashboard/index.tsx";
 // import React from "react";
 import Login from "./pages/Login/index.tsx";
-import { ToastContainer } from 'react-toastify';
-import PlansPage from './pages/PlansPage/index.tsx';
-import PaymentPage from './pages/PaymentPage/index.tsx';
+import { ToastContainer } from "react-toastify";
+import PlansPage from "./pages/PlansPage/index.tsx";
+import PaymentPage from "./pages/PaymentPage/index.tsx";
+import Dashboard from './pages/Dashboard/index.tsx';
 // import About from "./pages/About/index.tsx";
 // import Profile from "./pages/Profile/index.tsx";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-
 
 // const isLogin = false;
 
@@ -35,15 +34,13 @@ const Layout = () => {
   // }
   return (
     <>
-    <ToastContainer/>
-    <SpeedInsights/>
-    <div>
-      <Header />
-      <Outlet />
-      <Footer />
-    </div>
+      <ToastContainer />
+      <div>
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
     </>
-
   );
 };
 
@@ -68,10 +65,10 @@ const router = createBrowserRouter([
         path: "/payment",
         element: <PaymentPage />,
       },
-      // {
-      //   path: "/",
-      //   element: <App />,
-      // },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
       // {
       //   path: "/",
       //   element: <App />,

@@ -12,7 +12,6 @@ const ContactMe: React.FC = () => {
   const [subject, setSubject] = useState("");
   const [messages, setMessages] = useState("");
   const handleSubmit = () => {
-    console.log(userName, phone, email, subject, messages);
     setUserName("");
     setPhone("");
     setEmail("");

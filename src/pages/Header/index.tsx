@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/logoaaa.png";
-import Button from "../../components/ui/Button";
+import logo from "../../assets/logo2.png";
+// import Button from "../../components/ui/Button";
 import { useLocation } from "react-router-dom";
+import ProfileMenu from '../../components/ui/ProfileMenu';
+import tempProfile from '../../assets/d1.png'
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -9,12 +11,13 @@ const Header: React.FC = () => {
 
   const navigationArray = [
     { title: "Home", link: "/home" },
-    { title: "Sobre nós", link: "/about" },
-    { title: "Serviços", link: "/services" },
-    { title: "Login", link: "/login" },
+    // { title: "Sobre nós", link: "/about" },
+    { title: "Serviços", link: "/dashboard" },
+    { title: "Acompanhamento", link: "/login" },
     { title: "Contato", link: "/contact" },
-    { title: "Blog", link: "/blog" },
+    { title: "Login ", link: "/blog" },
   ];
+  const tempProfileImage = tempProfile
 
   return (
     <header className="w-full h-20 bg-[#16181C]/90 backdrop-blur-2xl  sticky top-0 z-50 rounded-lg">
@@ -37,7 +40,13 @@ const Header: React.FC = () => {
               </p>
             </Link>
           ))}
-          <Button className="w-28 h-10 uppercase" title="Cadastro" route={"/login"}/>
+          {/* <Button
+            className="w-28 h-10 uppercase"
+            title="Cadastro"
+            route={"/login"}
+          /> */}
+          {/* <ProfileMenu profilePicture={user.profilePicture} /> */}
+          <ProfileMenu profilePicture={tempProfileImage} />
         </div>
       </div>
     </header>

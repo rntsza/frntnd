@@ -16,7 +16,6 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ className, title, route }) => {
-  console.log(route)
   const navigate = useNavigate();
 
   const handleClick = () => {

@@ -1,3 +1,5 @@
+
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -13,6 +15,9 @@ export default {
         'backgroung-test2': "url('/bg2.jpg')",
         'backgroung-test3': "url('/bg2copiar.jpg')",
       },
+      colors:{
+        'secondary': '#111111',
+      },
       fontWeight: {
         'lightText': "font-extralight"
       },
@@ -21,6 +26,7 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [
+  ],
 }
 

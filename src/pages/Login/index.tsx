@@ -16,7 +16,6 @@ const Login: React.FC = () => {
 
   const handleLogin = async () => {
     try {
-      console.log(email, password);
       const response = await api.post("/sessions", {
         email,
         password,

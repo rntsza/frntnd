@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "../Container/index";
-import logo from "../../assets/logoaaa.png";
+import logo from "../../assets/logo2.png";
 import SocialIcon from "../../components/ui/SocialIcon";
 
 const Footer: React.FC = () => {
