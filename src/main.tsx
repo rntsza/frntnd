@@ -1,6 +1,7 @@
 // import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
+import React, { useState } from "react";
 import "./index.css";
 // import Dashboard from "./pages/Dashboard/index.tsx";
 // import Repository from "./pages/Repository/index.tsx";
@@ -21,13 +22,23 @@ import Login from "./pages/Login/index.tsx";
 import { ToastContainer } from "react-toastify";
 import PlansPage from "./pages/PlansPage/index.tsx";
 import PaymentPage from "./pages/PaymentPage/index.tsx";
-import Dashboard from './pages/Dashboard/index.tsx';
+import Dashboard from "./pages/Dashboard/index.tsx";
+import AuthModal from "./components/ui/AuthModal.tsx";
 // import About from "./pages/About/index.tsx";
 // import Profile from "./pages/Profile/index.tsx";
 
 // const isLogin = false;
 
 const Layout = () => {
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+
+  const handleOpenAuthModal = () => {
+    setIsAuthModalOpen(true);
+  };
+
+  const handleCloseAuthModal = () => {
+    setIsAuthModalOpen(false);
+  };
   // if (!isLogin) {
   //   console.log("login teste", isLogin);
   //   router.navigate("/home");
@@ -36,7 +47,9 @@ const Layout = () => {
     <>
       <ToastContainer />
       <div>
-        <Header />
+      <AuthModal isOpen={isAuthModalOpen} onClose={handleCloseAuthModal} />
+        <Header openAuthModal={handleOpenAuthModal} />
+
         <Outlet />
         <Footer />
       </div>

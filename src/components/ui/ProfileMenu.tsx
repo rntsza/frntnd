@@ -22,14 +22,17 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({ profilePicture }) => {
       />
       {isOpen && (
         <div className="absolute right-0 mt-2 w-48 bg-gray-900 rounded-md shadow-lg py-2">
-          <Link to="/profile" className="block px-4 py-2 text-white hover:text-gray-800 hover:bg-gray-200">
+          <Link to="/home" className="block px-4 py-2 text-white hover:text-gray-800 hover:bg-gray-200">
             Perfil
           </Link>
-          <Link to="/settings" className="block px-4 py-2 text-white hover:text-gray-800 hover:bg-gray-200">
+          <Link to="/home" className="block px-4 py-2 text-white hover:text-gray-800 hover:bg-gray-200">
             Configurações
           </Link>
-          <Link to="/subscriptions" className="block px-4 py-2 text-white hover:text-gray-800 hover:bg-gray-200">
+          <Link to="/plans" className="block px-4 py-2 text-white hover:text-gray-800 hover:bg-gray-200">
             Assinaturas
+          </Link>
+          <Link to="/home" className="block px-4 py-2 text-white hover:text-gray-800 hover:bg-gray-200">
+            Sair
           </Link>
         </div>
       )}
